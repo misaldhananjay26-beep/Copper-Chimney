@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --color-charcoal: #050505;
+  --color-charcoal-light: #0d0d0d;
+  --color-copper: #c98c58;
+  --color-copper-dark: #a17045;
+  --color-copper-light: #e6b895;
+  --color-gold: #d4af37;
+  --color-offwhite: #faf7f2;
+}
+
+body {
+  background-color: var(--color-charcoal);
+  color: var(--color-offwhite);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-copper);
+}
+
+body ::selection {
+  background-color: var(--color-copper);
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.luxury-glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(196, 140, 94, 0.1);
+}
+
+.bg-texture {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  opacity: 0.95;
+}
+
+/* Premium Button Animation */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  letter-spacing: 0.15em;
+}
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(201, 140, 88, 0.3) 50%, rgba(255,255,255,0) 100%);
+  transform: rotate(30deg) translate(-100%, -100%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-premium:hover::after {
+  transform: rotate(30deg) translate(100%, 100%);
+}
+
+.premium-gradient-text {
+  background: linear-gradient(135deg, var(--color-copper-light) 0%, var(--color-gold) 50%, var(--color-copper) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-hover-effect {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0, 0.8), 0 0 20px rgba(201, 140, 88, 0.1);
+  border-color: rgba(201, 140, 88, 0.5);
+}
